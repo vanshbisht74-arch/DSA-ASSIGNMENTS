@@ -1,24 +1,181 @@
+# 📘 Data Structures Lab README (Experiments 1–13)
 
+---
 
-Preview
+## ---- EXPERIMENT 1 — Stack ADT ----
 
-Code
+**Q1. What is an Abstract Data Type (ADT)?**  
+An Abstract Data Type (ADT) is a logical description of a data structure that defines operations and their behavior without specifying implementation. It focuses on what operations do, not how they are done.  
+Example: Stack ADT defines push, pop, and peek.
 
----- EXPERIMENT 1 — Stack ADT : ---- Q1. What is an Abstract Data Type (ADT)? An Abstract Data Type (ADT) is a logical description of a data structure that defines the operations that can be performed and the behaviour of those operations, without specifying how they are implemented. It focuses on functionality rather than implementation. Example: Stack ADT defines push, pop, and peek operations.
-Q2. Why are push and pop operations O(1)? Push and pop operate only on the top element of the stack and they do not require traversal or shifting of elements . Hence, the number of steps required is constant and independent of stack size. Hence, time complexity = O(1).
-Q3. Give one real-world use of stack. A stack is used in function call management in programming languages . Each function call is stored in the call stack, and when the function finishes, it is removed in Last-In-First-Out order.
----- EXPERIMENT 2 — Complexity Analysis : ---- Q1. What is the difference between Big-O and Big-Theta notation? Big-O notation represents the upper bound of algorithm growth, usually describing worst-case complexity. Big-Theta notation represents the exact asymptotic growth rate, meaning both upper and lower bounds are the same.
-Q2. What does worst-case complexity represent? Worst-case complexity represents the maximum number of operations an algorithm performs for any input of size n. It shows the slowest possible performance.
-Q3. Why is complexity analysis important in real systems? Complexity analysis helps in: selecting efficient algorithms predicting performance for large inputs reducing execution time and memory usage building scalable software systems
----- EXPERIMENT 3 — Recursive Factorial : ---- Q1. What is recursion depth? Recursion depth is the maximum number of recursive function calls present in the call stack simultaneously during execution.
-Q2. Why does recursion use stack memory? Each recursive call requires memory to store: function parameters local variables return address These are stored in the call stack until execution completes.
-Q3. When is iteration preferred over recursion? Iteration is preferred when: recursion depth is large stack memory is limited performance overhead of function calls must be avoided .
----- EXPERIMENT 4 — Fibonacci : ---- Q1. Why is naive recursive Fibonacci inefficient? Naive recursion repeatedly calculates the same Fibonacci values multiple times, leading to redundant computations. This causes exponential growth in function calls.
-Q2. How is memoization related to dynamic programming? Memoization is a technique used in dynamic programming where results of previously solved subproblems are stored and reused. This avoids repeated computation and improves efficiency.
-Q3. What is the space impact of memoization? Memoization requires additional memory to store computed values. Therefore, extra space complexity is O(n).
----- EXPERIMENT 5 — Tower of Hanoi ---- Q1. Why is the number of moves equal to 2ⁿ − 1? To move n disks: move n−1 disks to auxiliary rod move largest disk move n−1 disks again This gives recurrence: T(n) = 2T(n−1) + 1 Solving gives 2ⁿ − 1 moves.
-Q2. What is a recursion tree? A recursion tree is a diagram that represents recursive function calls as a tree structure. It helps visualize how many calls occur and how the problem is divided.
-Q3. What is the practical risk of exponential algorithms? Exponential algorithms grow extremely fast and become impractical for large inputs due to excessive time and resource consumption.
----- EXPERIMENT 6 — Recursive Binary Search ---- Q1. Why must data be sorted for binary search? Binary search works by comparing the target with the middle element and deciding which half to search. This is only possible if the data is sorted.
-Q2. What are best, average, and worst case complexities of binary search? Best case: O(1) when target is middle element. Average case: O(log n) due to repeated halving. Worst case: O(log n) when search continues until one element remains.
-Q3. What is divide and conquer? Divide and conquer is an algorithm design technique where a problem is divided into smaller subproblems, solved individually, and combined to form the final solution. Binary search is an example of divide and conquer.
+**Q2. Why are push and pop operations O(1)?**  
+Push and pop operate only on the top element and do not require traversal or shifting. Hence they take constant time → O(1).
+
+**Q3. Give one real-world use of stack.**  
+Function call management (call stack) in programming languages.
+
+---
+
+## ---- EXPERIMENT 2 — Complexity Analysis ----
+
+**Q1. Difference between Big-O and Big-Theta?**  
+Big-O → upper bound (worst case)  
+Big-Theta → exact bound (tight bound)
+
+**Q2. What is worst-case complexity?**  
+Maximum number of operations for input size n.
+
+**Q3. Why is complexity important?**  
+- Choose efficient algorithms  
+- Predict performance  
+- Build scalable systems  
+
+---
+
+## ---- EXPERIMENT 3 — Recursive Factorial ----
+
+**Q1. What is recursion depth?**  
+Maximum number of recursive calls in stack at once.
+
+**Q2. Why recursion uses stack memory?**  
+Each call stores parameters, variables, and return address.
+
+**Q3. When is iteration preferred?**  
+- Large recursion depth  
+- Limited memory  
+- Avoid overhead  
+
+---
+
+## ---- EXPERIMENT 4 — Fibonacci ----
+
+**Q1. Why naive recursion is inefficient?**  
+Repeats calculations → exponential time.
+
+**Q2. Memoization relation to DP?**  
+Stores results of subproblems → avoids recomputation.
+
+**Q3. Space impact?**  
+Extra memory used → O(n)
+
+---
+
+## ---- EXPERIMENT 5 — Tower of Hanoi ----
+
+**Q1. Why moves = 2ⁿ − 1?**  
+T(n) = 2T(n−1) + 1 → solution = 2ⁿ − 1
+
+**Q2. What is recursion tree?**  
+Tree representation of recursive calls.
+
+**Q3. Risk of exponential algorithms?**  
+Very slow for large inputs.
+
+---
+
+## ---- EXPERIMENT 6 — Recursive Binary Search ----
+
+**Q1. Why must data be sorted?**  
+To eliminate half using comparisons.
+
+**Q2. Complexities?**  
+Best: O(1)  
+Average: O(log n)  
+Worst: O(log n)
+
+**Q3. What is divide and conquer?**  
+Divide problem → solve → combine results.
+
+---
+
+## ---- EXPERIMENT 7 — Arrays 1D ----
+
+**Q1. Why index access is O(1)?**  
+Direct address calculation.
+
+**Q2. Why insertion at start is O(n)?**  
+Requires shifting all elements.
+
+**Q3. Static vs Dynamic arrays?**  
+Static = fixed size  
+Dynamic = resizable
+
+---
+
+## ---- EXPERIMENT 8 — Arrays 2D ----
+
+**Q1. Complexity of scanning matrix?**  
+O(n × m)
+
+**Q2. Real-world use?**  
+Images, spreadsheets, games
+
+**Q3. Memory layout?**  
+Row-major order
+
+---
+
+## ---- EXPERIMENT 9 — Dynamic Array ----
+
+**Q1. What is amortized complexity?**  
+Average cost over many operations.
+
+**Q2. Why doubling helps?**  
+Reduces number of resizes.
+
+**Q3. Why pop is O(1)?**  
+Just decreases size.
+
+---
+
+## ---- EXPERIMENT 10 — Singly Linked List ----
+
+**Q1. Why search is O(n)?**  
+Traverse node by node.
+
+**Q2. Why insert at head is O(1)?**  
+No traversal needed.
+
+**Q3. Node structure?**  
+Data + next pointer
+
+---
+
+## ---- EXPERIMENT 11 — Doubly Linked List ----
+
+**Q1. Advantage over SLL?**  
+Bidirectional traversal.
+
+**Q2. Browser history?**  
+Back/forward navigation.
+
+**Q3. Deletion ease?**  
+Access to previous node.
+
+---
+
+## ---- EXPERIMENT 12 — Stack + Parentheses Checker ----
+
+**Q1. Why stack?**  
+Follows LIFO for matching brackets.
+
+**Q2. Why "([)]" fails?**  
+Incorrect order.
+
+**Q3. Underflow?**  
+Pop from empty stack.
+
+---
+
+## ---- EXPERIMENT 13 — Queue using SLL ----
+
+**Q1. Why BFS uses queue?**  
+Processes level by level.
+
+**Q2. FIFO meaning?**  
+First In First Out.
+
+**Q3. Scheduling example?**  
+CPU scheduling, printer queue.
+
+---
