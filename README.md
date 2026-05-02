@@ -55,7 +55,7 @@ Max calls in stack.
 📦 Q2. Why stack?  
 Stores calls.
 
-⚡ Q3. Iteration?  
+⚡ Q3. Iteration?   
 Less memory.
 
 ---
